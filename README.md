@@ -10,6 +10,9 @@ Ce projet a été réalisé durant le cours d'Android de 2ème année de BUT à 
 * [API 19 d'Android](/Documentation/Choix_d'API.md)
 * 
 
+## Choix réalisé lors du projet
+* [Sujet de la Persistance](/Documentation/Choix_persistance.md)
+
 ## Développeurs 
 * [Louis](https://codefirst.iut.uca.fr/git/louis.dufour)
 * [Bastien](https://codefirst.iut.uca.fr/git/bastien.jacquelin)
