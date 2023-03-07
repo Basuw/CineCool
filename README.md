@@ -2,6 +2,11 @@
 Ce projet a été réalisé durant le cours d'Android de 2ème année de BUT à l'IUT Clermont Auvergne.  
 
 ## Contexte
+Cette application mobile est centrée principalement sur le sujet du cinéma.
+Elle a pour grande fonctionnalité d'avoir la liste des films qui sortent au cinéma. Voir même qui est disponible à l'achat.
+Nous pensons également développer un système de proximité si le projet se déroule bien. Cette fonctionnalité vous informera si le cinéma le plus proche de vous propose le film sélectionné.
+
+*(Attention cela n'est pas vraiment un contexte, mais une pseudo-liste de fonctionnalité)*
 
 ## Utilisation 
 
@@ -12,6 +17,7 @@ Ce projet a été réalisé durant le cours d'Android de 2ème année de BUT à 
 
 ## Choix réalisé lors du projet
 * [Sujet de la Persistance](/Documentation/Choix_persistance.md)
+* [Sujet de l'API choisi](/Documentation/Choix_d'API.md)
 
 ## Développeurs 
 * [Louis](https://codefirst.iut.uca.fr/git/louis.dufour)

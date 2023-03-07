@@ -4,10 +4,12 @@ Il faut se poser les bonnes question à ce momment là :
 - On stock quoi ?
 
 ## Sans BDD
+Dans notre contexte une base de données distante est inutile, une persistance locale suffirait.
+On a rien a stocker en ligne. L'utilisateur peut-être simplement stocké dans le **local storage** du téléphone.
+*(id juste par un nom -> pas l'objectif de garder des infos.)*
+Apres pour les infos des films c'est uniquement via l'API et garder en cache sur le tel en local.
 
-### Local Storage
-
-
+Pour la persistance, on peut ne pas s'embeter et la faire simplement dans un fichier JSON
 
 ## Avec BDD
 
