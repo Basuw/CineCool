@@ -48,4 +48,6 @@ class DetailActivity : AppCompatActivity() {
         textView2.text="Contenu de la page"
     }
 
+
+
 }
