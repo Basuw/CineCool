@@ -1,18 +1,10 @@
 package fr.iut.cinecool
 
-import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import fr.iut.cinecool.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,3 +29,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
