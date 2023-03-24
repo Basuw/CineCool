@@ -14,7 +14,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Back_arrow" />
+        app:srcCompat="@drawable/back_arrow" />
 
     <TextView
         android:id="@+id/titreFilm"

@@ -41,7 +41,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/Filtrage"
+        app:srcCompat="@drawable/filtrage"
         tools:layout_editor_absoluteY="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
