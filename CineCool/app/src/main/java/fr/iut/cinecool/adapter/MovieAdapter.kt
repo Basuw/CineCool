@@ -7,10 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.iut.cinecool.R
-import fr.iut.cinecool.model.Movie
+import com.bumptech.glide.Glide
+import fr.iut.cinecool.API.Movie
 
-class MovieAdapter(private val moviesList: ArrayList<Movie>) :
-
+class MovieAdapter(private var moviesList: List<Movie>) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -30,8 +30,21 @@ class MovieAdapter(private val moviesList: ArrayList<Movie>) :
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = moviesList[position]
-        holder.imageView.setImageResource(movie.icon)
-        holder.MovieName.text = movie.name
-        holder.OtherInformations.text = movie.realisator +" "+ movie.duration +" "+ movie.mark
+        val imageUrl = "https://image.tmdb.org/t/p/w500${movie.poster_path}"
+
+        Glide.with(holder.itemView.context)
+            .load(imageUrl)
+            .placeholder(R.drawable.imitation_game)
+            .into(holder.imageView)
+
+        holder.MovieName.text = movie.title
+        // Pour cet exemple, je mets l'overview en tant qu'OtherInformations, vous pouvez le personnaliser selon vos besoins
+        holder.OtherInformations.text = movie.overview
+    }
+
+    // Ajoutez cette méthode pour mettre à jour la liste des films
+    fun updateMovies(newMovies: List<Movie>) {
+        moviesList = newMovies
+        notifyDataSetChanged()
     }
 }

@@ -1,17 +1,7 @@
 package fr.iut.cinecool
 
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import fr.iut.cinecool.interfaces.ITheMovieDbApiCallback
-import fr.iut.cinecool.model.Movie
-import fr.iut.cinecool.model.MovieAPI
-import fr.iut.cinecool.services.TheMovieDbApiClient
-import retrofit2.Call
-import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class DetailActivity : AppCompatActivity() {
 

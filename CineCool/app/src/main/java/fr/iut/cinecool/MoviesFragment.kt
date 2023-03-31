@@ -6,36 +6,63 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.viewModels
 import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.iut.cinecool.adapter.MovieAdapter
+import fr.iut.cinecool.databinding.FragmentMoviesBinding
 import fr.iut.cinecool.model.Movie
 import fr.iut.cinecool.model.Stub
 
 class MoviesFragment : Fragment() {
-    private lateinit var recycler: RecyclerView
-    private lateinit var movieList: ArrayList<Movie>
+    private var _binding: FragmentMoviesBinding? = null
+    private val binding get() = _binding!!
     private lateinit var movieAdapter: MovieAdapter
+
+    private val movieViewModel: MovieViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_movies, container, false)
-        val button = view.findViewById<Button>(R.id.button)
-        button.setOnClickListener {
+        _binding = FragmentMoviesBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.button.setOnClickListener {
             findNavController().navigate(R.id.movies_to_sessions)
         }
-        recycler = view.findViewById(R.id.recyclerMovie)
-        recycler.setHasFixedSize(true)
-        recycler.layoutManager = LinearLayoutManager(context)
-        val stub = Stub()
-        stub.loading()
-        movieList=stub.movies
-        movieAdapter = MovieAdapter(movieList)
-        recycler.adapter = movieAdapter
-        return  view
+
+        initRecyclerView()
+
+        // Observe les changements des données des films populaires
+        movieViewModel.popularMovies.observe(viewLifecycleOwner, { movies ->
+            movieAdapter.updateMovies(movies)
+        })
+
+        // Charge les films populaires
+        loadPopularMovies()
+    }
+
+    private fun initRecyclerView() {
+        binding.recyclerMovie.setHasFixedSize(true)
+        binding.recyclerMovie.layoutManager = LinearLayoutManager(context)
+        movieAdapter = MovieAdapter(ArrayList())
+        binding.recyclerMovie.adapter = movieAdapter
+    }
+
+    private fun loadPopularMovies() {
+        // Remplacez YOUR_API_KEY par votre clé d'API The Movie DB
+        movieViewModel.getPopularMovies("a97243d7813d31446f6c43284e6854d5", 1)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
