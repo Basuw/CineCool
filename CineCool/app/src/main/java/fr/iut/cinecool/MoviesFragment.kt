@@ -1,5 +1,6 @@
 package fr.iut.cinecool
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ import fr.iut.cinecool.model.Movie
 import fr.iut.cinecool.model.Stub
 
 class MoviesFragment : Fragment() {
+
     private var _binding: FragmentMoviesBinding? = null
     private val binding get() = _binding!!
     private lateinit var movieAdapter: MovieAdapter
@@ -29,6 +31,7 @@ class MoviesFragment : Fragment() {
     ): View? {
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,19 +44,29 @@ class MoviesFragment : Fragment() {
         initRecyclerView()
 
         // Observe les changements des données des films populaires
-        movieViewModel.popularMovies.observe(viewLifecycleOwner, { movies ->
+        movieViewModel.popularMovies.observe(viewLifecycleOwner) { movies ->
             movieAdapter.updateMovies(movies)
-        })
+        }
 
         // Charge les films populaires
         loadPopularMovies()
+
     }
 
     private fun initRecyclerView() {
         binding.recyclerMovie.setHasFixedSize(true)
         binding.recyclerMovie.layoutManager = LinearLayoutManager(context)
+
         movieAdapter = MovieAdapter(ArrayList())
         binding.recyclerMovie.adapter = movieAdapter
+        movieAdapter.onItemClick = {
+            val fragment = SessionFragment()
+            val myBundle = Bundle()
+            myBundle.putParcelable("movie",it)
+            fragment.arguments=myBundle
+            findNavController().navigate(R.id.movies_to_sessions)
+        }
+
     }
 
     private fun loadPopularMovies() {

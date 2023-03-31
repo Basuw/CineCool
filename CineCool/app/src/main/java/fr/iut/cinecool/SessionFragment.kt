@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import fr.iut.cinecool.API.Movie
 
 class SessionFragment : Fragment() {
 
@@ -20,6 +22,16 @@ class SessionFragment : Fragment() {
         button.setOnClickListener {
             findNavController().navigate(R.id.action_SessionFragment_to_fragment_movies)
         }
+        init()
         return  view
+    }
+
+    private fun init() {
+        val movie = arguments?.getParcelable<Movie>("movie")
+        if(movie!=null){
+            requireView().findViewById<TextView>(R.id.title).text=movie.title
+            requireView().findViewById<TextView>(R.id.description).text=movie.overview
+            //requireView().findViewById<TextView>(R.id.afficheFilm).setText()=movie.poster_path
+        }
     }
 }

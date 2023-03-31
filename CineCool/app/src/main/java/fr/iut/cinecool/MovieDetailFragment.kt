@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
 import fr.iut.cinecool.API.Movie
 // import fr.iut.cinecool.databinding.FragmentMovieDetailBinding
 
