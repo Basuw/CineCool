@@ -27,7 +27,7 @@ Nous pensons également développer un système de proximité si le projet se d�
 
 **Contraintes** | **Respecter**           | **Non respecter** 
  --- |------------------------| --- 
-Je sais utiliser les Intent comme composant de communication au sein de mon application |                        |  
+Je sais utiliser les Intent comme composant de communication au sein de mon application |   X                     |  
 Je sais développer en utilisant le SDK le plus bas possible |                        |  
 Je sais distinguer mes ressources en utilisant les qualifier |                       |
 Je sais faire des vues xml en utilisant layouts et composants adéquats |       X                |
