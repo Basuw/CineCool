@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/fragment_movies">
+
     <fragment
         android:id="@+id/CinemaFragment"
         android:name="fr.iut.cinecool.CinemaFragment"
@@ -14,6 +15,7 @@
             app:destination="@id/fragment_movies">
         </action>
     </fragment>
+
     <fragment
         android:id="@+id/fragment_movies"
         android:name="fr.iut.cinecool.MoviesFragment"
@@ -25,6 +27,7 @@
             app:destination="@id/SessionFragment">
         </action>
     </fragment>
+
     <fragment
         android:id="@+id/SessionFragment"
         android:name="fr.iut.cinecool.SessionFragment"
@@ -34,4 +37,20 @@
             android:id="@+id/action_SessionFragment_to_fragment_movies"
             app:destination="@id/fragment_movies" />
     </fragment>
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="fr.iut.cinecool.MoviesFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_movies">
+        <action
+            android:id="@+id/action_moviesFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="fr.iut.cinecool.MovieDetailFragment"
+        android:label="Movie Details"
+        tools:layout="@layout/vu_detail" />
 </navigation>
