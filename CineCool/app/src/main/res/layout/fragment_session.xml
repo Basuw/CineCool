@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:srcCompat="@drawable/imitation_game" />
+        app:srcCompat="@drawable/no_pictures" />
 
     <TextView
         android:id="@+id/description"

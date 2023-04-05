@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import fr.iut.cinecool.API.Movie
@@ -18,14 +19,15 @@ class SessionFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_session, container, false)
-        val button = view.findViewById<Button>(R.id.returnButton)
+        return  view
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        init()
+        val button = view.findViewById<ImageButton>(R.id.returnButton)
         button.setOnClickListener {
             findNavController().navigate(R.id.action_SessionFragment_to_fragment_movies)
         }
-        init()
-        return  view
     }
-
     private fun init() {
         val movie = arguments?.getParcelable<Movie>("movie")
         if(movie!=null){

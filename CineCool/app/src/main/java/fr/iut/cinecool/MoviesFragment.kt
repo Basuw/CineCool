@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.viewModels
 import android.widget.LinearLayout
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,8 +17,10 @@ import fr.iut.cinecool.adapter.MovieAdapter
 import fr.iut.cinecool.databinding.FragmentMoviesBinding
 import fr.iut.cinecool.model.Movie
 import fr.iut.cinecool.model.Stub
+import fr.iut.cinecool.model.cineViewModel
 
 class MoviesFragment : Fragment() {
+    private val sharedViewModel: cineViewModel by activityViewModels()
 
     private var _binding: FragmentMoviesBinding? = null
     private val binding get() = _binding!!
@@ -31,7 +34,6 @@ class MoviesFragment : Fragment() {
     ): View? {
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,10 +62,14 @@ class MoviesFragment : Fragment() {
         movieAdapter = MovieAdapter(ArrayList())
         binding.recyclerMovie.adapter = movieAdapter
         movieAdapter.onItemClick = {
-            val fragment = SessionFragment()
-            val myBundle = Bundle()
-            myBundle.putParcelable("movie",it)
-            fragment.arguments=myBundle
+            /*val fragment = SessionFragment()
+            fragment.arguments = Bundle().apply {
+                putParcelable("movie",it)
+            }*/
+
+
+            sharedViewModel.setCine(it)
+
             findNavController().navigate(R.id.movies_to_sessions)
         }
 
