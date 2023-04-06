@@ -25,19 +25,22 @@
             android:id="@+id/MovieName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxWidth="700px"
             android:text="Movie-Name"
+            android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.522"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.122"
-            android:textSize="30dp"/>
+            app:layout_constraintVertical_bias="0.122" />
 
         <TextView
             android:id="@+id/OtherInformations"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxHeight="300px"
+            android:maxWidth="600px"
             android:text="Other-Informations"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

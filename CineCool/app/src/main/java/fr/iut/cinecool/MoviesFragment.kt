@@ -6,17 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.viewModels
-import android.widget.LinearLayout
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import fr.iut.cinecool.adapter.MovieAdapter
 import fr.iut.cinecool.databinding.FragmentMoviesBinding
-import fr.iut.cinecool.model.Movie
-import fr.iut.cinecool.model.Stub
 import fr.iut.cinecool.model.cineViewModel
 
 class MoviesFragment : Fragment() {
@@ -39,10 +34,6 @@ class MoviesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener {
-            findNavController().navigate(R.id.movies_to_sessions)
-        }
-
         initRecyclerView()
 
         // Observe les changements des données des films populaires
@@ -62,14 +53,7 @@ class MoviesFragment : Fragment() {
         movieAdapter = MovieAdapter(ArrayList())
         binding.recyclerMovie.adapter = movieAdapter
         movieAdapter.onItemClick = {
-            /*val fragment = SessionFragment()
-            fragment.arguments = Bundle().apply {
-                putParcelable("movie",it)
-            }*/
-
-
             sharedViewModel.setCine(it)
-
             findNavController().navigate(R.id.movies_to_sessions)
         }
 
