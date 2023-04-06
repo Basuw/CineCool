@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import fr.iut.cinecool.R
 import fr.iut.cinecool.API.Movie
 
@@ -28,13 +29,13 @@ class MovieAdapter(private var moviesList: List<Movie>) :
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie = moviesList[position]/*
+        val movie = moviesList[position]
         val imageUrl = "https://image.tmdb.org/t/p/w500${movie.poster_path}"
 
         Glide.with(holder.itemView.context)
             .load(imageUrl)
             .placeholder(R.drawable.imitation_game)
-            .into(holder.imageView)*/
+            .into(holder.imageView)
 
         holder.MovieName.text = movie.title
         holder.OtherInformations.text = movie.overview

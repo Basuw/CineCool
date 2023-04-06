@@ -9,12 +9,7 @@
         android:id="@+id/CinemaFragment"
         android:name="fr.iut.cinecool.CinemaFragment"
         android:label="Cinema Fragment"
-        tools:layout="@layout/fragment_cinema">
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/fragment_movies">
-        </action>
-    </fragment>
+        tools:layout="@layout/fragment_cinema"/>
 
     <fragment
         android:id="@+id/fragment_movies"
@@ -26,6 +21,9 @@
             android:id="@+id/movies_to_sessions"
             app:destination="@id/SessionFragment">
         </action>
+        <action
+            android:id="@+id/movies_to_cinema"
+            app:destination="@id/CinemaFragment" />
     </fragment>
 
     <fragment
@@ -38,19 +36,4 @@
             app:destination="@id/fragment_movies" />
     </fragment>
 
-    <fragment
-        android:id="@+id/moviesFragment"
-        android:name="fr.iut.cinecool.MoviesFragment"
-        android:label="Movies"
-        tools:layout="@layout/fragment_movies">
-        <action
-            android:id="@+id/action_moviesFragment_to_movieDetailFragment"
-            app:destination="@id/movieDetailFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/movieDetailFragment"
-        android:name="fr.iut.cinecool.MovieDetailFragment"
-        android:label="Movie Details"
-        tools:layout="@layout/vu_detail" />
 </navigation>

@@ -44,6 +44,9 @@ class MoviesFragment : Fragment() {
         // Charge les films populaires
         loadPopularMovies()
 
+        binding.settings.setOnClickListener {
+            findNavController().navigate(R.id.movies_to_sessions)
+        }
     }
 
     private fun initRecyclerView() {

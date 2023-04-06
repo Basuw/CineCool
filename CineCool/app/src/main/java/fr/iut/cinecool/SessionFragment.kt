@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import fr.iut.cinecool.API.Movie
 import fr.iut.cinecool.databinding.FragmentSessionBinding
 import fr.iut.cinecool.model.cineViewModel
@@ -34,11 +36,18 @@ class SessionFragment : Fragment() {
         }
     }
     private fun init() {
-        requireView().findViewById<TextView>(R.id.title).text= sharedViewModel.cine.value!!.title
+        requireView().findViewById<TextView>(R.id.title).text= sharedViewModel.cine.value?.title
         val desc = requireView().findViewById<TextView>(R.id.description)
-        desc.text=sharedViewModel.cine.value!!.overview
+        desc.text=sharedViewModel.cine.value?.overview
         desc.isScrollContainer = true
         desc.movementMethod = ScrollingMovementMethod()
-        //requireView().findViewById<TextView>(R.id.afficheFilm).setText()=movie.poster_path
+        val img=requireView().findViewById<ImageView>(R.id.afficheFilm)
+
+        val imageUrl = "https://image.tmdb.org/t/p/w500${sharedViewModel.cine.value?.poster_path}"
+
+        Glide.with(this.requireContext())
+            .load(imageUrl)
+            .placeholder(R.drawable.no_pictures)
+            .into(img)
     }
 }
