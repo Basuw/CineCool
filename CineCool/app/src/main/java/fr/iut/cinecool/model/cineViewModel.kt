@@ -3,13 +3,14 @@ package fr.iut.cinecool.model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import fr.iut.cinecool.API.THMDB.Movie
 
 
 class cineViewModel : ViewModel() {
-    private val _cine = MutableLiveData<fr.iut.cinecool.API.Movie>()
-    val cine: LiveData<fr.iut.cinecool.API.Movie> = _cine
+    private val _cine = MutableLiveData<Movie>()
+    val cine: LiveData<Movie> = _cine
 
-    fun setCine(cine: fr.iut.cinecool.API.Movie) {
+    fun setCine(cine: Movie) {
         _cine.value = cine
     }
 

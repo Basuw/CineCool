@@ -1,4 +1,4 @@
-package fr.iut.cinecool.API
+package fr.iut.cinecool.API.THMDB
 
 import android.os.Parcel
 import android.os.Parcelable

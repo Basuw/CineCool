@@ -1,10 +1,11 @@
-package fr.iut.cinecool
+package fr.iut.cinecool.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import fr.iut.cinecool.R
 
 
 class CinemaFragment : Fragment() {

@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/CinemaFragment"
-        android:name="fr.iut.cinecool.CinemaFragment"
+        android:name="fr.iut.cinecool.fragments.CinemaFragment"
         android:label="Cinema Fragment"
         tools:layout="@layout/fragment_cinema"/>
 
     <fragment
         android:id="@+id/fragment_movies"
-        android:name="fr.iut.cinecool.MoviesFragment"
+        android:name="fr.iut.cinecool.fragments.MoviesFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_movies">
 
@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/SessionFragment"
-        android:name="fr.iut.cinecool.SessionFragment"
+        android:name="fr.iut.cinecool.fragments.SessionFragment"
         android:label="SessionFragment"
         tools:layout="@layout/fragment_session">
         <action

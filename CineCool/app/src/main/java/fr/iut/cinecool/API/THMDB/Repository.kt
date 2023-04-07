@@ -1,4 +1,4 @@
-package fr.iut.cinecool.API
+package fr.iut.cinecool.API.THMDB
 
 class Repository {
     private val apiService = ApiClient.apiService

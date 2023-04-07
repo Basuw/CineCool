@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<osmdroid>
+    <preference name="osmdroid.basePath" value="osmdroid" />
+    <preference name="osmdroid.cachePath" value="tiles" />
+</osmdroid>

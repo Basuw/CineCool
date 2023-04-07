@@ -1,12 +1,7 @@
-package fr.iut.cinecool
+package fr.iut.cinecool.fragments
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import fr.iut.cinecool.API.Movie
+
 // import fr.iut.cinecool.databinding.FragmentMovieDetailBinding
 
 class MovieDetailFragment : Fragment() {
