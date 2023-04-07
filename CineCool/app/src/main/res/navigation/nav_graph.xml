@@ -28,9 +28,9 @@
 
     <fragment
         android:id="@+id/SessionFragment"
-        android:name="fr.iut.cinecool.fragments.SessionFragment"
+        android:name="fr.iut.cinecool.fragments.MovieDetailFragment"
         android:label="SessionFragment"
-        tools:layout="@layout/fragment_session">
+        tools:layout="@layout/fragment_detail">
         <action
             android:id="@+id/action_SessionFragment_to_fragment_movies"
             app:destination="@id/fragment_movies" />

@@ -1,7 +1,7 @@
-package fr.iut.cinecool.API
+package fr.iut.cinecool.API.THMDB
 
 class Repository {
-    private val apiService = ApiClient.apiService
+    private val apiService = ApiClientTHMDB.apiService
 
     suspend fun getPopularMovies(apiKey: String, page: Int): MovieResponse {
         return apiService.getPopularMovies(apiKey, page)

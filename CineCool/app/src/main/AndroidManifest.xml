@@ -18,13 +18,11 @@
         android:theme="@style/Theme.CineCool"
         tools:targetApi="31">
         <activity
-            android:name=".CinemaActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.CineCool.NoActionBar">
+            android:theme="@style/Theme.CineCool.NoActionBar"
+            tools:ignore="DuplicateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

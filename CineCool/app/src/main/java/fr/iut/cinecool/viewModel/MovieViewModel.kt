@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import androidx.lifecycle.MutableLiveData
-import fr.iut.cinecool.API.Movie
-import fr.iut.cinecool.API.Repository
+import fr.iut.cinecool.API.THMDB.Movie
+import fr.iut.cinecool.API.THMDB.Repository
 
 class MovieViewModel : ViewModel() {
     private val repository = Repository()

@@ -1,9 +1,9 @@
-package fr.iut.cinecool.API
+package fr.iut.cinecool.API.THMDB
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object ApiClient {
+object ApiClientTHMDB {
     private const val BASE_URL = "https://api.themoviedb.org/3/"
 
     private val retrofit: Retrofit = Retrofit.Builder()

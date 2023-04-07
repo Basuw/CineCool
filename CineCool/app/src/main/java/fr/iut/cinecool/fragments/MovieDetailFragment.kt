@@ -1,52 +1,51 @@
 package fr.iut.cinecool.fragments
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import fr.iut.cinecool.API.Movie
-// import fr.iut.cinecool.databinding.FragmentMovieDetailBinding
+import com.bumptech.glide.Glide
+import fr.iut.cinecool.R
+import fr.iut.cinecool.viewModel.cineViewModel
 
 class MovieDetailFragment : Fragment() {
-    /*private var _binding: FragmentDetailMovieBinding? = null
-    private val binding get() = _binding!!
+    private val sharedViewModel: cineViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDetailMovieBinding.inflate(inflater, container, false)
-        return binding.root
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_detail, container, false)
+        return  view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // Récupérez le film passé en argument
-        val movie: Movie? = arguments?.getParcelable("movie")
-
-        // Mettez à jour les vues avec les données du film
-        if (movie != null) {
-            binding.titreFilm.text = movie.title
-            binding.description.text = movie.overview
-
-            val imageUrl = "https://image.tmdb.org/t/p/w500${movie.poster_path}"
-            Glide.with(binding.afficheFilm.context)
-                .load(imageUrl)
-                .placeholder(R.drawable.imitation_game)
-                .into(binding.afficheFilm)
-        }
-
-        // Gérer le clic sur le bouton de retour
-        binding.backButton.setOnClickListener {
-            findNavController().popBackStack()
+        init()
+        val button = view.findViewById<ImageButton>(R.id.returnButton)
+        button.setOnClickListener {
+            findNavController().navigate(R.id.action_SessionFragment_to_fragment_movies)
         }
     }
+    private fun init() {
+        requireView().findViewById<TextView>(R.id.title).text= sharedViewModel.cine.value?.title
+        val desc = requireView().findViewById<TextView>(R.id.description)
+        desc.text=sharedViewModel.cine.value?.overview
+        desc.isScrollContainer = true
+        desc.movementMethod = ScrollingMovementMethod()
+        val img=requireView().findViewById<ImageView>(R.id.afficheFilm)
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }*/
+        val imageUrl = "https://image.tmdb.org/t/p/w500${sharedViewModel.cine.value?.poster_path}"
+
+        Glide.with(this.requireContext())
+            .load(imageUrl)
+            .placeholder(R.drawable.no_pictures)
+            .into(img)
+    }
 }
-

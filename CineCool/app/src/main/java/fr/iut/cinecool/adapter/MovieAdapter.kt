@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.iut.cinecool.R
-import fr.iut.cinecool.API.Movie
+import fr.iut.cinecool.API.THMDB.Movie
 
 class MovieAdapter(private var moviesList: List<Movie>) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {

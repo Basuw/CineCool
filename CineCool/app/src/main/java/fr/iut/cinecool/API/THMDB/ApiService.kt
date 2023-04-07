@@ -1,4 +1,4 @@
-package fr.iut.cinecool.API
+package fr.iut.cinecool.API.THMDB
 
 import retrofit2.http.GET
 import retrofit2.http.Query
