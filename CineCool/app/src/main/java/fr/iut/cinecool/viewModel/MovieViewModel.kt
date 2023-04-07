@@ -1,4 +1,4 @@
-package fr.iut.cinecool
+package fr.iut.cinecool.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

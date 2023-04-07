@@ -1,6 +1,5 @@
-package fr.iut.cinecool
+package fr.iut.cinecool.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,9 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import fr.iut.cinecool.viewModel.MovieViewModel
+import fr.iut.cinecool.R
 import fr.iut.cinecool.adapter.MovieAdapter
 import fr.iut.cinecool.databinding.FragmentMoviesBinding
-import fr.iut.cinecool.model.cineViewModel
+import fr.iut.cinecool.viewModel.cineViewModel
 
 class MoviesFragment : Fragment() {
     private val sharedViewModel: cineViewModel by activityViewModels()

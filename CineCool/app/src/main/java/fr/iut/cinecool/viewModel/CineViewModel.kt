@@ -1,4 +1,4 @@
-package fr.iut.cinecool.model
+package fr.iut.cinecool.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData

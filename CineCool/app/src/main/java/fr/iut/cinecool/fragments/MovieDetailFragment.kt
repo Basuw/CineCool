@@ -1,4 +1,4 @@
-package fr.iut.cinecool
+package fr.iut.cinecool.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

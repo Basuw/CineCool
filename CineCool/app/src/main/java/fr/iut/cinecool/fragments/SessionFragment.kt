@@ -1,4 +1,4 @@
-package fr.iut.cinecool
+package fr.iut.cinecool.fragments
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
@@ -6,16 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import fr.iut.cinecool.API.Movie
-import fr.iut.cinecool.databinding.FragmentSessionBinding
-import fr.iut.cinecool.model.cineViewModel
+import fr.iut.cinecool.R
+import fr.iut.cinecool.viewModel.cineViewModel
 
 class SessionFragment : Fragment() {
     private val sharedViewModel: cineViewModel by activityViewModels()
