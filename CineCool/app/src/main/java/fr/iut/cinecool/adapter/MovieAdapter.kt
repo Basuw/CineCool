@@ -34,7 +34,7 @@ class MovieAdapter(private var moviesList: List<Movie>) :
 
         Glide.with(holder.itemView.context)
             .load(imageUrl)
-            .placeholder(R.drawable.imitation_game)
+            .placeholder(R.drawable.no_pictures)
             .into(holder.imageView)
 
         holder.MovieName.text = movie.title
