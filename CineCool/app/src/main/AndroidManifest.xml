@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
-    <!-- Ajoutez cette ligne pour autoriser l'accès à la localisation -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
-    <!-- Ajoutez cette ligne pour autoriser l'accès à Internet -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-feature android:name="android.hardware.location"
+        android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -31,5 +29,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
