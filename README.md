@@ -25,7 +25,7 @@ Nous pensons également développer un système de proximité si le projet se d�
 
 ## Respect des contraintes
 
-**Contraintes** | **Respecter**           | **Non respecter** 
+**Contraintes** | **Respecteé**           | **Non respecté** 
  --- |------------------------| --- 
 Je sais utiliser les Intent comme composant de communication au sein de mon application |   X                     |  
 Je sais développer en utilisant le SDK le plus bas possible |                        |  
